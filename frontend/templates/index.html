@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkinson's Prediction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #007bff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        header ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        header li {
+            margin-left: 20px;
+        }
+
+        header a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+            margin: 10px 0 30px;
+        }
+
+        /* Form Styling */
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        label {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        label:hover {
+            background-color: #0056b3;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        /* Flash Message Styling */
+        .alert {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            margin-top: 20px;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Parkinson's Prediction</h1>
+        <p>Upload a voice sample to predict whether the person is affected by Parkinson's disease or not.</p>
+
+        <!-- Upload Form -->
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <label for="file-upload">Choose File</label>
+            <input type="file" id="file-upload" name="file" accept=".wav" required>
+            <button type="submit">Predict</button>
+        </form>
+
+        <!-- Flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="alert">
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <footer>
+        <p>Developed by BR Priyankkaa and Aishwarya G</p>
+    </footer>
+</body>
+</html>

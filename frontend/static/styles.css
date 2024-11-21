@@ -1,0 +1,133 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fb; /* Soft light background */
+    color: #333;  /* Dark gray text for readability */
+    line-height: 1.6;
+}
+
+header {
+    background-color: #3a3a3a; /* Dark gray header */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #4caf50; /* Green color on hover */
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #2c3e50; /* Dark blue-gray text */
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form input[type="file"] {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+}
+
+form input[type="file"]:focus {
+    border-color: #4caf50; /* Green focus border */
+    outline: none;
+}
+
+form button {
+    padding: 12px 25px;
+    background-color: #4caf50; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.alert {
+    background-color: #f44336; /* Red background for alerts */
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #3a3a3a;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer a {
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+footer a:hover {
+    color: white;
+}

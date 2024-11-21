@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Parkinson's Prediction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #007bff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        header ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        header li {
+            margin-left: 20px;
+        }
+
+        header a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>About This Project</h1>
+        <p>This project uses machine learning to predict whether a person is affected by Parkinson's disease based on their voice sample.</p>
+        <p>Parkinson's disease is a neurodegenerative disorder that affects movement. Detecting it early can significantly improve the quality of life for those affected.</p>
+        <p>By analyzing voice samples, we aim to create a tool that helps in early detection, contributing to better healthcare solutions.</p>
+    </div>
+
+    <footer>
+        <p>Developed by BR Priyankkaa and Aishwarya G</p>
+    </footer>
+</body>
+</html>
